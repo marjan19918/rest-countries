@@ -176,6 +176,7 @@ export default {
 @media screen and (max-width: 420px){
   .filtercont{
     flex-direction: column;
+    width: 100%;
   }
 }
 </style>

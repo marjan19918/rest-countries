@@ -79,10 +79,22 @@ justify-content: flex-start;
     height: 50px;
     border: none;
         }
-        @media screen and (max-width: 800px){
+        @media screen and (max-width: 820px){
          
          .filtercont{
            padding: 5px;
          }
+        }
+        @media screen and (max-width:420px){
+          input{
+            width: 100%;
+          }
+          form{
+            width:95%;
+          }
+          .filtercont{
+            width: 92%;
+    padding: 1px;
+          }
         }
 </style>

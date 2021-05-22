@@ -23,7 +23,7 @@ export default createStore({
     //  setbordercountry()=>(),
     //  setabbr:(state,payload)=>(state.abbr=payload),
     //  setinitialname:(state,payload)=>(),
-     setlivesearch:(state,payload)=>(state.showcountry=state.country.filter(val=>val.name.toLowerCase().includes(payload))),
+     setlivesearch:(state,payload)=>(state.showcountry=state.country.filter(val=>val.name.toLowerCase().startsWith(payload))),
      settheme:(state,payload)=>(state.darkmode=!payload),
 
      setfilterregion:(state,payload)=>(

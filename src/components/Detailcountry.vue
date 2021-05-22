@@ -213,7 +213,7 @@ button.darkel{
 .vforcont{
     display: inline;
 }
-@media screen and (max-width: 1050px){
+@media screen and (max-width: 1065px){
    .detalinfo{flex-direction: column;} 
 }
 @media screen and (max-width:890px) {
