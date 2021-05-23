@@ -2,12 +2,9 @@
 <div class="selectcon">
   <select name="serch reigen" :class="[dark ? 'darkmode' : '']" id="" v-model="selected" @input="$emit('input', $event.target.value)" >
       
-        <!-- <option value=""  disabled selected class="j">Filter by Region</option> -->
+        
         <option :value='option.value' v-for="option in options" :key='option.text' >{{option.text}}</option>
-        <!-- <option :value='options.value'>{{options.text}}</option>
-        <option :value='options.value'>{{options.text}}</option>
-        <option :value='options.value'>{{options.text}}</option>
-        <option :value='options.value'>{{options.text}}</option> -->
+        
     </select>
     <div style="display:none">
         <div>1</div>
@@ -43,7 +40,7 @@ export default {
 
 <style>
 .darkmode{
-  background-color:hsl(209, 23%, 22%) ;
+  background-color:hsl(0, 0%, 24%) ;
 }
 .selectcon{
    width: 50%;
@@ -51,7 +48,7 @@ export default {
 display: flex;
 flex-direction: row;
 justify-content: flex-end;
-/* background-color:hsl(0, 0%, 98%) ;  */
+
 }
 select{
             padding: 10px;

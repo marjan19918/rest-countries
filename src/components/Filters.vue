@@ -5,7 +5,7 @@
             <input @input="changehandler" type="text" placeholder="Search for a country" v-model="name" :class="[dark ? 'darkmode' : '']">
         </form>
 
-    <!-- <p>{{region}}</p> -->
+    
   </div>
 </template>
 
@@ -34,10 +34,7 @@ props:{
         // this.name=value
         this.searchcountry(this.name)
       },
-    //   findregion(region){
-    //       console.log(this.region)
-    //       this.$emit('findregion',this.region.selected.region)
-    //   }
+    
     searchcountry:_.throttle(function(value){this.$emit('findcountrylive',value),300;})
     },
 }
@@ -53,7 +50,7 @@ props:{
 display: flex;
 flex-direction: row;
 justify-content: flex-start;
-/* background-color:hsl(0, 0%, 98%) ; */
+
 
 }
   form{
@@ -66,7 +63,7 @@ justify-content: flex-start;
             outline: none;
           background-color: white; 
     padding: 10px;
-    /* width: 100%; */
+    
     width: 400px;
     height: 30px;
     

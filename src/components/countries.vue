@@ -2,9 +2,9 @@
  
 <div class="lki" >
     <div  class="lki" v-for="country in countries" :key="country.numericCode"  >
-        <!-- <router-link :to="{name:'Details',params:{countrydetal:coutry}}" > -->
+        
 <Country :country='country' @coutryclicked="$emit('clickedcountry',country.numericCode,country.name)"  @choosename="$emit('choosename',country.name)" :dark='dark' />
-<!-- </router-link> -->
+
     </div>
 
 
@@ -38,6 +38,6 @@ dark:false
    flex-direction: row;
    flex-wrap: wrap; 
     justify-content: space-around;
-   /* background:hsl(0, 0%, 98%) ; */
+ 
 }
 </style>

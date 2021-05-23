@@ -1,16 +1,16 @@
 <template>
-  <header>
+  <header :class="[dark ? 'darkmode' : '']">
       <h1>Where in the world?</h1>
-      <!-- <button>
-          <span>&#x263e;</span> Dark mode
-          </button> -->
+      
           <span class="fi" @click="$emit('setdark')"><span class="bi">&#x263e;</span> Dark mode</span>
   </header>
 </template>
 
 <script>
 export default {
-
+props:{
+    dark:Boolean
+}
 }
 </script>
 
@@ -30,16 +30,22 @@ h1{font-weight: 800;
 margin: 0px;
 
 }
-/* button{
-    width: 100px;
-    height: 30px;
-    padding-bottom: 29px;
-    background-color: white;
-    border-color: white;
-    outline:none;
-} */
-.bi{
+
+
+.bi,span{
     font-size: 20px;
-   
+   cursor: pointer;
+}
+.darkmode{
+  background-color:hsl(207, 26%, 17%) ;
+  color: white;
+    
+}
+@media screen and (max-width:420px){
+   header{padding: 20px;} 
+   h1{font-size: 16px;}
+   span{
+       font-size: 14px;
+   }
 }
 </style>

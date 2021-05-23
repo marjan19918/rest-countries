@@ -2,7 +2,7 @@
 
 
   <div class="kl" >
-    <!-- <router-link :to="{name:'Details',params:{countrydetal:country}}"> -->
+    
       <div class="countrycont" @click="$emit('coutryclicked',id,name)" @dbclick="$emit('choosename',name)" :class="[dark ? 'darkmode' : '']">
         <div class="imgcont">
          <img :src="country.flag" alt="flag"> 
@@ -15,7 +15,7 @@
         </div>
  
       </div>
-      <!-- </router-link> -->
+      
   </div>
   
 </template>
@@ -36,22 +36,19 @@ methods: {
 <style scoped>
 
 .countrycont{
-  
+  text-align: left;
   margin: 30px 15px;
   display: flex;
   flex-direction: column;
   width: 250px;
   height: 370px;
-  /* border: 1px solid black; */
+ 
   border-radius: 5px;
   background-color: white;
 }
 
 .imgcont{
-  /* width: 100%; */
- 
-  /* height: 300px; */
-  /* height: 50%; */
+  
   height: 220px;
 border-radius: 5px 5px 0px 0px;
 }
