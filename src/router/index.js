@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Homepage from '../views/Homepage.vue'
-
+import page404 from '../components/page404.vue'
 import Detailcountry from '../components/Detailcountry.vue'
 
 const routes = [
@@ -15,6 +15,11 @@ const routes = [
     name:'detailcountry',
     component:Detailcountry
   },
+  {
+    path:'/:catchAll(.*)*',
+    name:'page404',
+    component:page404
+  }
  
   
 ]

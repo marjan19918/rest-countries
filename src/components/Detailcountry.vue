@@ -1,5 +1,6 @@
 <template>
   <div :class="[darkmode ? 'dark':'maindetail',]">
+      <Loading v-if="isloading"/>
     <Header @setdark="darkmode= !darkmode" />
     <div class="button"><button :class="[darkmode ? 'darkel':'']" @click="$router.go(-1)">&#8592;  back</button></div>
     <div class="subdetail">
@@ -49,18 +50,20 @@
 <script>
 import { mapMutations } from 'vuex';
 import Header from './Header' 
+import Loading from './Loading.vue';
 export default {
     data() {
         return {
             item:'',
              darkmode:'',
-             countryname:''
+             countryname:'',
+             isloading:false
         }
     },
-    components:{Header},
+    components:{Header,Loading},
 computed:{
     detail(){
-        
+       
         return this.$store.state.detailcountriy;
     },
     itemlang (){
@@ -78,10 +81,12 @@ methods:{
     ...mapMutations(["selectcountry"]),
     show(){console.log(localStorage.darkmode);},
    async fetchbordercountry(value){
+       this.isloading=true
        console.log(value.target.innerHTML);
     
      const data= await fetch('https://restcountries.eu/rest/v2/alpha/'+value.target.innerHTML)
        const res= await data.json()
+       this.isloading=false
         console.log(res.name);
         this.countryname=res.name
         this.$store.commit("selectcountry", this.countryname);
@@ -93,7 +98,9 @@ watch:{ darkmode:function(){
     }},
 mounted(){
 
-    this.darkmode=JSON.parse(localStorage.getItem('darkmode') )
+    this.darkmode=JSON.parse(localStorage.getItem('darkmode') );
+    
+      
 }
 }
 
