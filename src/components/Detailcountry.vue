@@ -90,12 +90,20 @@ methods:{
         console.log(res.name);
         this.countryname=res.name
         this.$store.commit("selectcountry", this.countryname);
+        this.$router.push(
+            {name:'detailcountry',
+            params:{name:this.countryname},
+    })
     }
 
 },
 watch:{ darkmode:function(){
       localStorage.setItem('darkmode',JSON.stringify(this.darkmode))
-    }},
+
+    },
+
+    
+    },
 mounted(){
 
     this.darkmode=JSON.parse(localStorage.getItem('darkmode') );
